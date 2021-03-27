@@ -2,6 +2,7 @@ import React from "react";
 import { Container, Box, Typography, Grid } from "@material-ui/core";
 
 import Copyright from "../../common/components/Copyright";
+import MainPost from "../../common/components/MainPost";
 import FeaturePost from "../../common/components/FeaturePost";
 
 const featuredPosts = [
@@ -36,9 +37,10 @@ const Blog: React.FC = () => {
         <Typography variant="h4" component="h1" gutterBottom>
           Blog - AirLiquide
         </Typography>
+        {!!featuredPosts.length && <MainPost post={featuredPosts[0]} />}
         <Grid container spacing={4}>
           {featuredPosts.map((post) => (
-            <FeaturePost key={post.title} post={post} />
+            <FeaturePost key={post.id} post={post} />
           ))}
         </Grid>
       </Box>

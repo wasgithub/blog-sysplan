@@ -10,16 +10,11 @@ import {
   Hidden,
 } from "@material-ui/core";
 
+import { IPropsPost } from "../../models/IPropsPost";
+
 import { useStyles } from "./styles";
 
-interface Props {
-  post: {
-    title?: string;
-    body?: string;
-  };
-}
-
-export default function FeaturedPost({ post }: Props) {
+export default function FeaturedPost({ post }: IPropsPost) {
   const classes = useStyles();
 
   return (
