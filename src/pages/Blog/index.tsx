@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Container, Box, Typography, Grid } from "@material-ui/core";
+import { useDispatch, useSelector } from "react-redux";
 
 import Header from "./components/Header";
 import Copyright from "../../common/components/Copyright";
 import MainPost from "../../common/components/MainPost";
 import FeaturePost from "../../common/components/FeaturePost";
+
+import { getPosts } from "../../core/actionCreators/postsActionCreators";
+import { AppState } from "../../core/reducers/rootReducer";
 
 const featuredPosts = [
   {
@@ -32,6 +36,14 @@ const featuredPosts = [
 ];
 
 const Blog: React.FC = () => {
+  const dispatch = useDispatch();
+  const postsState = useSelector((state: AppState) => state.posts);
+  console.log("postsState", postsState);
+
+  useEffect(() => {
+    dispatch(getPosts());
+  }, []);
+
   return (
     <Container maxWidth="lg">
       <Box my={4}>

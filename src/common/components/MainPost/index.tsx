@@ -3,12 +3,9 @@ import React from "react";
 import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
-
-import { IPropsPost } from "../../models/IPropsPost";
-
 import { useStyles } from "./styles";
 
-export default function MainFeaturedPost({ post }: IPropsPost) {
+export default function MainFeaturedPost(post: any) {
   const classes = useStyles();
 
   return (
