@@ -8,6 +8,7 @@ import Copyright from "../../common/components/Copyright";
 
 import { getPosts } from "../../core/actionCreators/postsActionCreators";
 import { getUsers } from "../../core/actionCreators/usersActionCreators";
+import { getComments } from "../../core/actionCreators/commentsActionCreators";
 
 const Blog: React.FC = () => {
   const dispatch = useDispatch();
@@ -15,6 +16,7 @@ const Blog: React.FC = () => {
   useEffect(() => {
     dispatch(getPosts());
     dispatch(getUsers());
+    dispatch(getComments());
   }, [dispatch]);
 
   return (
