@@ -1,14 +1,8 @@
 import * as actions from "../actionTypes/postsActionTypes";
-
-export interface PostPros {
-  body: string;
-  id: number;
-  title: string;
-  userId: number;
-}
+import { IPost } from "../../common/models/IPost";
 
 export interface PostsState {
-  posts: Array<PostPros>;
+  posts: Array<IPost>;
 }
 
 const initialState: PostsState = {

@@ -10,9 +10,14 @@ import {
   Hidden,
 } from "@material-ui/core";
 
+import { IPost } from "../../models/IPost";
 import { useStyles } from "./styles";
 
-const FeaturedPost = (post: any) => {
+interface Props {
+  post: IPost;
+}
+
+const FeaturedPost = ({ post }: Props) => {
   const classes = useStyles();
 
   return (
