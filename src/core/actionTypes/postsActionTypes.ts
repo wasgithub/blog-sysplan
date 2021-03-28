@@ -21,7 +21,7 @@ export interface GetPostsSuccessAction {
 }
 
 export const GET_POSTS_FAILURE = "@postsActionTypes/GET_POSTS_FAILURE";
-export interface GetLyricsFailureAction {
+export interface GetUsersFailureAction {
   type: typeof GET_POSTS_FAILURE;
   error: Error | string;
 }
@@ -31,4 +31,4 @@ export type PostsAction =
   | GetPostsAction
   | GetPostsRequestAction
   | GetPostsSuccessAction
-  | GetLyricsFailureAction;
+  | GetUsersFailureAction;

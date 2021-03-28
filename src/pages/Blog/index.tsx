@@ -7,12 +7,14 @@ import Body from "./components/Body";
 import Copyright from "../../common/components/Copyright";
 
 import { getPosts } from "../../core/actionCreators/postsActionCreators";
+import { getUsers } from "../../core/actionCreators/usersActionCreators";
 
 const Blog: React.FC = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(getPosts());
+    dispatch(getUsers());
   }, [dispatch]);
 
   return (

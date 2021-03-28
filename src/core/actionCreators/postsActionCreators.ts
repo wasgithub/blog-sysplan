@@ -28,7 +28,7 @@ export function getPostsSuccess(posts: []): actions.GetPostsSuccessAction {
 
 export function getPostsFailure(
   error: Error | string
-): actions.GetLyricsFailureAction {
+): actions.GetUsersFailureAction {
   return {
     type: actions.GET_POSTS_FAILURE,
     error,

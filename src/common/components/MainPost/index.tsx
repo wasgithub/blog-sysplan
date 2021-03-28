@@ -5,7 +5,13 @@ import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
 import { useStyles } from "./styles";
 
-export default function MainFeaturedPost(post: any) {
+import { IPost } from "../../models/IPost";
+
+interface Props {
+  post: IPost;
+}
+
+export default function MainFeaturedPost({ post }: Props) {
   const classes = useStyles();
 
   return (

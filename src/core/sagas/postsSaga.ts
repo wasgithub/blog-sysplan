@@ -5,7 +5,6 @@ import * as actionCreators from "../actionCreators/postsActionCreators";
 import * as actionTypes from "../actionTypes/postsActionTypes";
 
 function* onLoadPosts() {
-  console.log("chegou aqui..");
   try {
     yield put(actionCreators.getPostsRequest());
     const { data } = yield call(fetchPosts);
