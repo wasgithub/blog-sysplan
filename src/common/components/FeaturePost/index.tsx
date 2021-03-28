@@ -14,7 +14,7 @@ import { IPropsPost } from "../../models/IPropsPost";
 
 import { useStyles } from "./styles";
 
-export default function FeaturedPost({ post }: IPropsPost) {
+const FeaturedPost = ({ post }: IPropsPost) => {
   const classes = useStyles();
 
   return (
@@ -45,4 +45,6 @@ export default function FeaturedPost({ post }: IPropsPost) {
       </CardActionArea>
     </Grid>
   );
-}
+};
+
+export default FeaturedPost;

@@ -1,6 +1,7 @@
 import React from "react";
 import { Container, Box, Typography, Grid } from "@material-ui/core";
 
+import Header from "./components/Header";
 import Copyright from "../../common/components/Copyright";
 import MainPost from "../../common/components/MainPost";
 import FeaturePost from "../../common/components/FeaturePost";
@@ -37,6 +38,13 @@ const Blog: React.FC = () => {
         <Typography variant="h4" component="h1" gutterBottom>
           Blog - AirLiquide
         </Typography>
+        <Grid item xs={12} data-aos={"fade-up"}>
+          <Header
+            subtitle="Quem tem informação tem poder."
+            disableGutter
+            titleVariant="h3"
+          />
+        </Grid>
         {!!featuredPosts.length && <MainPost post={featuredPosts[0]} />}
         <Grid container spacing={4}>
           {featuredPosts.map((post) => (
