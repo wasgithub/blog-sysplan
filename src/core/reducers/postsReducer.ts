@@ -1,7 +1,14 @@
 import * as actions from "../actionTypes/postsActionTypes";
 
+export interface PostPros {
+  body: string;
+  id: number;
+  title: string;
+  userId: number;
+}
+
 export interface PostsState {
-  posts?: [];
+  posts: Array<PostPros>;
 }
 
 const initialState: PostsState = {
