@@ -25,7 +25,7 @@ const NewPost = ({}) => {
 
           <Paper component="form">
             <InputBase
-              placeholder="Adcione um comentário...."
+              placeholder="Adcione uma descrição...."
               inputProps={{ "aria-label": "search google maps" }}
               fullWidth
             />

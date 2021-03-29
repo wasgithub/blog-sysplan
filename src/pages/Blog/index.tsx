@@ -22,7 +22,7 @@ const Blog: React.FC = () => {
     dispatch(getUsers());
     dispatch(getComments());
     dispatch(getUserById(1));
-  }, [dispatch]);
+  }, []);
 
   return (
     <ContainerDefault>
@@ -31,7 +31,7 @@ const Blog: React.FC = () => {
         <FeedIdentity />
       </nav>
       <main>
-        {/* <NewPost /> */}
+        <NewPost />
         <CardItem />
       </main>
       <aside>Related links</aside>

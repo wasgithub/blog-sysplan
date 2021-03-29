@@ -18,7 +18,6 @@ export const ContainerDefault = styled.div`
     padding: 30px;
     text-align: center;
     font-size: 1.4em;
-    background-color: #369;
     color: white;
   }
 
@@ -33,7 +32,6 @@ export const ContainerDefault = styled.div`
 
   aside {
     padding: 20px;
-    background-color: #936;
   }
 
   footer {
