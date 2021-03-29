@@ -3,12 +3,12 @@ import { IUser } from "../../common/models/IUser";
 
 export interface UsersState {
   users: Array<IUser>;
-  user?: IUser | {};
+  user?: IUser;
 }
 
 const initialState: UsersState = {
   users: [],
-  user: {},
+  user: undefined,
 };
 
 export default function postsReducer(

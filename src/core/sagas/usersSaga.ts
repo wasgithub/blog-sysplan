@@ -18,7 +18,7 @@ function* getUsersById({ id }: actionTypes.getUserByIdAction) {
   try {
     yield put(actionCreators.getUserByIdRequest(id));
     const { data } = yield call(getUserById, id);
-    yield put(actionCreators.getUsersSuccess(data));
+    yield put(actionCreators.getUserByIdSuccess(data));
   } catch (error) {
     yield put(actionCreators.getUsersFailure(error.response.data.error));
   }

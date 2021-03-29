@@ -3,6 +3,9 @@ import { useDispatch } from "react-redux";
 import { ContainerDefault } from "./styles";
 
 import Copyright from "../../common/components/Copyright";
+import CardItem from "../../common/components/Card";
+import FeedIdentity from "../../common/components/FeedIdentity";
+import NewPost from "../../common/components/NewPost";
 
 import { getPosts } from "../../core/actionCreators/postsActionCreators";
 import {
@@ -25,13 +28,13 @@ const Blog: React.FC = () => {
     <ContainerDefault>
       <header>Header</header>
       <nav>
-        <div />
+        <FeedIdentity />
       </nav>
       <main>
-        <div />
-        <div />
+        {/* <NewPost /> */}
+        <CardItem />
       </main>
-      <aside>links</aside>
+      <aside>Related links</aside>
       <footer>
         <Copyright />
       </footer>
