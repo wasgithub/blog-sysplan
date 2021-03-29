@@ -6,6 +6,7 @@ import Copyright from "../../common/components/Copyright";
 import CardItem from "../../common/components/Card";
 import FeedIdentity from "../../common/components/FeedIdentity";
 import NewPost from "../../common/components/NewPost";
+import TopBar from "./components/TopBar";
 
 import { getPosts } from "../../core/actionCreators/postsActionCreators";
 import {
@@ -26,7 +27,9 @@ const Blog: React.FC = () => {
 
   return (
     <ContainerDefault>
-      <header>Header</header>
+      <header>
+        <TopBar />
+      </header>
       <nav>
         <FeedIdentity />
       </nav>
