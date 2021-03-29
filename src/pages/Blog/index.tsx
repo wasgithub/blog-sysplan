@@ -7,7 +7,10 @@ import Body from "./components/Body";
 import Copyright from "../../common/components/Copyright";
 
 import { getPosts } from "../../core/actionCreators/postsActionCreators";
-import { getUsers } from "../../core/actionCreators/usersActionCreators";
+import {
+  getUsers,
+  getUserById,
+} from "../../core/actionCreators/usersActionCreators";
 import { getComments } from "../../core/actionCreators/commentsActionCreators";
 
 const Blog: React.FC = () => {
@@ -17,6 +20,7 @@ const Blog: React.FC = () => {
     dispatch(getPosts());
     dispatch(getUsers());
     dispatch(getComments());
+    dispatch(getUserById(1));
   }, [dispatch]);
 
   return (
