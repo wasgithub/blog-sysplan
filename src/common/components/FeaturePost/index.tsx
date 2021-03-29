@@ -1,4 +1,5 @@
 import React from "react";
+import { useSelector } from "react-redux";
 
 import {
   Typography,
@@ -8,9 +9,11 @@ import {
   CardContent,
   CardMedia,
   Hidden,
+  Paper,
 } from "@material-ui/core";
 
 import { IPost } from "../../models/IPost";
+import { AppState } from "../../../core/reducers/rootReducer";
 import { useStyles } from "./styles";
 
 interface Props {
@@ -18,7 +21,14 @@ interface Props {
 }
 
 const FeaturedPost = ({ post }: Props) => {
+  const commentsState = useSelector(
+    (state: AppState) => state.commentsReducer.comments
+  );
   const classes = useStyles();
+
+  const commentsFiltered = commentsState.filter(
+    (comment) => comment.postId === post.id
+  );
 
   return (
     <Grid item xs={12} md={6}>
@@ -40,11 +50,18 @@ const FeaturedPost = ({ post }: Props) => {
           <Hidden xsDown>
             <CardMedia
               className={classes.cardMedia}
-              image={"https://source.unsplash.com/random"}
+              image={`https://picsum.photos/id/${
+                Math.floor(Math.random() * (100 - 1)) + 1
+              }/200/300`}
               title={post.title}
             />
           </Hidden>
         </Card>
+        {commentsFiltered.map((comment) => (
+          <Grid container spacing={1}>
+            <Paper>{comment.body}</Paper>
+          </Grid>
+        ))}
       </CardActionArea>
     </Grid>
   );
