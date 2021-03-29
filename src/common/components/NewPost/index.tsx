@@ -4,7 +4,6 @@ import CardContent from "@material-ui/core/CardContent";
 import CardActions from "@material-ui/core/CardActions";
 import Avatar from "@material-ui/core/Avatar";
 import IconButton from "@material-ui/core/IconButton";
-import Typography from "@material-ui/core/Typography";
 
 import SendIcon from "@material-ui/icons/Send";
 import Paper from "@material-ui/core/Paper";
@@ -14,9 +13,7 @@ import WriteArticleButton from "./components/WriteArticleButton";
 
 import "./styles.scss";
 import { Container } from "./styles";
-const NewPost = ({}) => {
-  const [expanded, setExpanded] = React.useState(false);
-
+const NewPost = () => {
   return (
     <Container>
       <Card className="pb-2">

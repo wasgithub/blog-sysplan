@@ -23,7 +23,7 @@ const Blog: React.FC = () => {
     dispatch(getUsers());
     dispatch(getComments());
     dispatch(getUserById(1));
-  }, []);
+  }, [dispatch]);
 
   return (
     <ContainerDefault>

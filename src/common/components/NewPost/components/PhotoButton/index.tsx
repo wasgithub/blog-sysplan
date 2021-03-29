@@ -50,8 +50,7 @@ const PhotoButton = ({ handleSelect = (file: any) => {} }) => {
     </Container>
   ) : (
     <Container>
-      <img className="image-preview" src={file} />
-
+      <img className="image-preview" src={file} alt="foto" />
       <Typography
         variant="caption"
         className="image-name"

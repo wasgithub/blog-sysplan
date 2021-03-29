@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-
+import React from "react";
 import Typography from "@material-ui/core/Typography";
 
 import { Container } from "./styles";
@@ -10,11 +9,7 @@ interface Props {
   profile?: string;
 }
 
-const ProfileButton = ({
-  selected,
-  handleClick = (type: any): void => {},
-  profile,
-}: Props) => {
+const ProfileButton = ({ profile }: Props) => {
   return (
     <Container>
       <img src={profile} alt="Eu" />
