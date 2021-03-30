@@ -14,6 +14,7 @@ import {
   InputBase,
   Grid,
 } from "@material-ui/core";
+import Skeleton from "@material-ui/lab/Skeleton";
 
 import SendIcon from "@material-ui/icons/Send";
 
@@ -41,55 +42,69 @@ const CardItem = () => {
   };
   return (
     <Container>
-      <Grid container spacing={1}>
-        {postsOrder.map((post) => {
-          return (
-            <Card className={classes.root}>
-              <Header userPost={post.userId} />
-              <CardMedia
-                className={classes.media}
-                image={getRandomImageUser()}
-                title="Paella dish"
-              />
-              <CardContent>
-                <Typography variant="body1" color="primary" component="p">
-                  {post.title}
-                </Typography>
-                <Typography variant="body2" color="textSecondary" component="p">
-                  {post.body}
-                </Typography>
-              </CardContent>
-              <CardActions disableSpacing>
-                <LikeButton like={true} onClick={() => {}} />
-                <CommentButton onClick={handleExpandClick} />
-                <ShareButton onClick={() => {}} />
-              </CardActions>
-              <Collapse in={expanded} timeout="auto" unmountOnExit>
-                <Card className={classes.root}>
-                  <CardContent className="comment-container">
-                    <Avatar aria-label="recipe" className={classes.avatar}>
-                      R
-                    </Avatar>
+      {!!postsState.length ? (
+        <Grid container spacing={1}>
+          {postsOrder.map((post) => {
+            return (
+              <Card className={classes.root}>
+                <Header userPost={post.userId} />
+                <CardMedia
+                  className={classes.media}
+                  image={getRandomImageUser()}
+                  title="Paella dish"
+                />
+                <CardContent>
+                  <Typography variant="body1" color="primary" component="p">
+                    {post.title}
+                  </Typography>
+                  <Typography
+                    variant="body2"
+                    color="textSecondary"
+                    component="p"
+                  >
+                    {post.body}
+                  </Typography>
+                </CardContent>
+                <CardActions disableSpacing>
+                  <LikeButton like={true} onClick={() => {}} />
+                  <CommentButton onClick={handleExpandClick} />
+                  <ShareButton onClick={() => {}} />
+                </CardActions>
+                <Collapse in={expanded} timeout="auto" unmountOnExit>
+                  <Card className={classes.root}>
+                    <CardContent className="comment-container">
+                      <Avatar aria-label="recipe" className={classes.avatar}>
+                        R
+                      </Avatar>
 
-                    <Paper component="form" className={classes.root}>
-                      <InputBase
-                        placeholder="Adcione um comentário...."
-                        inputProps={{ "aria-label": "search google maps" }}
-                        fullWidth
-                      />
+                      <Paper component="form" className={classes.root}>
+                        <InputBase
+                          placeholder="Adcione um comentário...."
+                          inputProps={{ "aria-label": "search google maps" }}
+                          fullWidth
+                        />
 
-                      <IconButton aria-label="search">
-                        <SendIcon />
-                      </IconButton>
-                    </Paper>
-                  </CardContent>
-                  <CommentContainer postId={post.id} />
-                </Card>
-              </Collapse>
-            </Card>
-          );
-        })}
-      </Grid>
+                        <IconButton aria-label="search">
+                          <SendIcon />
+                        </IconButton>
+                      </Paper>
+                    </CardContent>
+                    <CommentContainer postId={post.id} />
+                  </Card>
+                </Collapse>
+              </Card>
+            );
+          })}
+        </Grid>
+      ) : (
+        <>
+          <Skeleton animation="wave" variant="circle" width={40} height={40} />
+
+          <Skeleton variant="rect" height={400} />
+          <Skeleton height={40} />
+          <Skeleton width="60%" height={40} />
+        </>
+      )}
     </Container>
   );
 };
