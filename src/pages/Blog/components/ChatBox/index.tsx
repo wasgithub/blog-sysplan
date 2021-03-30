@@ -15,7 +15,7 @@ const ChatBox = ({ onSeach = (text: any) => {} }: Props) => {
       <aside>
         <header>
           <input type="text" placeholder="Encontrar amigos" />
-          <Box py={2}>
+          <Box py={2} px={2}>
             <Grid container>
               <StackAvatars {...avatars} />
             </Grid>
