@@ -12,21 +12,25 @@ interface Props {
 
 const CommentContainer = ({ postId }: Props) => {
   const commentsState = useSelector(
-    (state: AppState) => state.postsReducer.posts
+    (state: AppState) => state.commentsReducer.comments
   );
-  const commentsFiltered = commentsState.filter(
+  const commentsFiltered = commentsState?.filter(
     (comment) => comment.postId === postId
   );
 
+  console.log(commentsFiltered);
+
   return (
     <>
-      <Comment
-        like={true}
-        name="Washington Alexandre"
-        time={new Date().toLocaleDateString()}
-        thumb="https://miro.medium.com/max/1838/1*mk1-6aYaf_Bes1E3Imhc0A.jpeg"
-        body="asjklhdklajsdlkajsdlkjaskld askdj laksdlkasdlas dlas dlasjld kaslkd asld alksdalskd als"
-      />
+      {commentsFiltered.slice(0, 3).map((comment) => (
+        <Comment
+          like={true}
+          name={comment.name}
+          time={new Date().toLocaleDateString()}
+          thumb="https://miro.medium.com/max/1838/1*mk1-6aYaf_Bes1E3Imhc0A.jpeg"
+          body={comment.body}
+        />
+      ))}
       <CardActions className="comment-actions">
         <Typography
           variant="caption"

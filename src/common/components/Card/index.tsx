@@ -83,7 +83,7 @@ const CardItem = () => {
                       </IconButton>
                     </Paper>
                   </CardContent>
-                  <CommentContainer postId={post.postId} />
+                  <CommentContainer postId={post.id} />
                 </Card>
               </Collapse>
             </Card>
