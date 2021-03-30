@@ -28,7 +28,7 @@ const Blog: React.FC = () => {
   }, [dispatch]);
 
   return (
-    <Container maxWidth="xl">
+    <Container maxWidth="lg">
       <ContainerDefault>
         <header>
           <TopBar />
