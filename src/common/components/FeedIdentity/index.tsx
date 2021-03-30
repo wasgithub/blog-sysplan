@@ -28,16 +28,20 @@ const FeedIdentity = () => {
               </div>
               <figcaption className="avatar__meta">
                 <h5 className="avatar__title js-user-name">
-                  {userState?.name}
+                  {userState?.name ?? "Washington Alexandre"}
                 </h5>
                 <Typography>{userState?.company.bs}</Typography>
                 <Box mt={1}>
                   <Typography variant="caption">Email </Typography>
-                  <Typography>{userState?.email}</Typography>
+                  <Typography>
+                    {userState?.email ?? "was.alexandre42@gmail.com"}
+                  </Typography>
                 </Box>
                 <Box mt={1}>
                   <Typography variant="caption">Empresa </Typography>
-                  <Typography>{userState?.company.name}</Typography>
+                  <Typography>
+                    {userState?.company.name ?? "Air Liquide"}
+                  </Typography>
                 </Box>
               </figcaption>
             </figure>

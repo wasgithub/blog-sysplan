@@ -8,16 +8,17 @@ export const ContainerDefault = styled.div`
   @media (min-width: 768px) {
     & {
       display: grid;
-      grid-template-columns: minmax(200px, 0.7fr) 1fr minmax(100px, 0.5fr);
+      grid-template-columns: 1fr 3fr 2fr;
       grid-template-rows: auto 1fr auto;
     }
   }
 
   header {
     grid-column: span 3;
-    padding: 30px;
+    padding-bottom: 0px;
     text-align: center;
     font-size: 1.4em;
+    background-color: #fff;
     color: white;
   }
 
@@ -31,7 +32,7 @@ export const ContainerDefault = styled.div`
   }
 
   aside {
-    padding: 20px;
+    margin-right: 40px;
   }
 
   footer {

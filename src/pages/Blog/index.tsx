@@ -1,12 +1,14 @@
 import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { ContainerDefault } from "./styles";
+import { Container } from "@material-ui/core";
 
 import Copyright from "../../common/components/Copyright";
 import CardItem from "../../common/components/Card";
 import FeedIdentity from "../../common/components/FeedIdentity";
 import NewPost from "../../common/components/NewPost";
 import TopBar from "./components/TopBar";
+import ChatBox from "./components/ChatBox";
 
 import { getPosts } from "../../core/actionCreators/postsActionCreators";
 import {
@@ -26,22 +28,26 @@ const Blog: React.FC = () => {
   }, [dispatch]);
 
   return (
-    <ContainerDefault>
-      <header>
-        <TopBar />
-      </header>
-      <nav>
-        <FeedIdentity />
-      </nav>
-      <main>
-        <NewPost />
-        <CardItem />
-      </main>
-      <aside>Related links</aside>
-      <footer>
-        <Copyright />
-      </footer>
-    </ContainerDefault>
+    <Container maxWidth="xl">
+      <ContainerDefault>
+        <header>
+          <TopBar />
+        </header>
+        <nav>
+          <FeedIdentity />
+        </nav>
+        <main>
+          <NewPost />
+          <CardItem />
+        </main>
+        <aside>
+          <ChatBox />
+        </aside>
+        <footer>
+          <Copyright />
+        </footer>
+      </ContainerDefault>
+    </Container>
   );
 };
 
