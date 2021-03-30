@@ -25,6 +25,7 @@ import { AppState } from "../../../core/reducers/rootReducer";
 import Header from "./components/Header";
 
 import { getRandomImageUser } from "../../../common/helpers/getRandomImage";
+import { orderUser } from "../../../common/helpers/order";
 
 import { Container, useStyles } from "./styles";
 
@@ -33,6 +34,7 @@ const CardItem = () => {
   const [expanded, setExpanded] = React.useState(false);
 
   const postsState = useSelector((state: AppState) => state.postsReducer.posts);
+  const postsOrder = postsState.sort(orderUser);
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
@@ -40,7 +42,7 @@ const CardItem = () => {
   return (
     <Container>
       <Grid container spacing={1}>
-        {postsState.map((post) => {
+        {postsOrder.map((post) => {
           return (
             <Card className={classes.root}>
               <Header userPost={post.userId} />

@@ -19,7 +19,6 @@ const MainSearchBar = () => {
         <Grid item>
           <div className="search-input ml-1">
             <Search />
-
             <input type="text" placeholder="Pesquisar" />
           </div>
         </Grid>
